@@ -197,7 +197,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .mate__b h3{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(34px,3.4vw,52px);line-height:1}
 .mate__b .caps{color:var(--gold)}
 .mate__b p{color:var(--mute);margin-bottom:18px}
-@media (max-width:900px){.team{grid-template-columns:1fr}}
+.team .mate:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - clamp(6px,1vw,14px))}
+@media (max-width:900px){.team{grid-template-columns:1fr}.team .mate:last-child:nth-child(odd){width:100%}}
 @media (max-width:480px){.mate{grid-template-columns:1fr 1fr}.mate__b .btn{padding:0 14px;letter-spacing:.12em;font-size:10px}}
 
 /* ---------- shop page ---------- */
@@ -574,8 +575,8 @@ function viewHome(){
 
   <section class="sec" style="padding-top:0"><div class="wrap">
     <div class="sec__h rv"><div><span class="caps">Atendimento</span><h2>Fale com um <em>consultor</em></h2></div><span class="caps" style="color:var(--mute)">${esc(L.horario)}</span></div>
-    <div class="team">${L.consultores.map(c => `<div class="mate rv"><div class="mate__ph"><img src="${img(c.foto)}" alt="Consultor ${c.nome}" loading="lazy"></div>
-      <div class="mate__b"><span class="caps">Consultor</span><h3>${c.nome}</h3><p>${c.telefone}</p>
+    <div class="team">${L.consultores.map(c => `<div class="mate rv"><div class="mate__ph"><img src="${img(c.foto)}" alt="${c.cargo || 'Consultor'} ${c.nome}" loading="lazy"></div>
+      <div class="mate__b"><span class="caps">${c.cargo || 'Consultor'}</span><h3>${c.nome}</h3><p>${c.telefone}</p>
       <a class="btn btn--wa" target="_blank" rel="noopener" href="${waLink(c, 'Olá, ' + c.nome + '! Vim pelo site da AR Store e gostaria de atendimento.')}">${WA_ICON} WhatsApp</a></div></div>`).join('')}</div>
   </div></section>`;
 }

@@ -14,7 +14,8 @@ window.LOJA = {
   endereco: "AR Store Menswear, Boa Vista - RR", // troque pelo endereço completo
   consultores: [
     { nome: "Paulinho", whatsapp: "5595991351209", telefone: "(95) 99135-1209", foto: "consultor-paulinho.webp" },
-    { nome: "Danilo",   whatsapp: "5595991146155", telefone: "(95) 99114-6155", foto: "consultor-danilo.webp" }
+    { nome: "Danilo",   whatsapp: "5595991146155", telefone: "(95) 99114-6155", foto: "consultor-danilo.webp" },
+    { nome: "Miguel",   whatsapp: "5595991639884", telefone: "(95) 99163-9884", foto: "consultor-miguel.webp", cargo: "Atendente" }
   ]
 };
 
